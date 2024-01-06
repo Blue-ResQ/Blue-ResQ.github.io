@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Form</title>
+  <style>
+    /* Add your CSS styles here */
+    /* Example styles, you can modify as needed */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding-top: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      max-width: 100px;
+      height: auto;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+    .captcha-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    img.captcha-image {
+      margin-right: 10px;
+      max-width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .refresh-captcha {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img class="logo" src="BCILogoWithWhiteR.png" alt="Your Logo">
+    </div>
+    <form action="submit.php" method="post" enctype="multipart/form-data">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="phone">Phone Number *</label>
+      <input type="text" id="phone" name="phone" required>
+      
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="address">Address *</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+      
+      <label for="pincode">Pincode *</label>
+      <input type="text" id="pincode" name="pincode" required>
+      
+      <label for="animalName">Animal Name *</label>
+      <input type="text" id="animalName" name="animalName" required>
+      
+      <label for="animalCondition">Animal Condition *</label>
+      <select id="animalCondition" name="animalCondition" required>
+        <option value="healthy">Healthy</option>
+        <option value="injured">Injured</option>
+        <option value="sick">Sick</option>
+        <!-- Add more options as needed -->
+      </select>
+      
+      <label for="file">Upload Image (Max 2MB) *</label>
+      <input type="file" id="file" name="file" accept="image/*" required>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function refreshCaptcha() {
+      var captchaImage = document.querySelector('.captcha-image');
+      captchaImage.src = 'captcha.php?' + Math.random();
+    }
+  </script>
+</body>
+</html>
