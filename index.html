@@ -158,6 +158,7 @@
 
   document.getElementById("submit").addEventListener('click',function(e){
     e.preventDefault();
+    const uniqueId = Math.floor(1000000 + Math.random() * 9000000);
     set(ref(db,'name/'+document.getElementById("name").value),
     {
       name : document.getElementById("name").value,
@@ -168,6 +169,7 @@
       animalName : document.getElementById("animalName").value,
       severity : document.getElementById("severity").value,
       file : document.getElementById("file").value,
+      uniqueId: uniqueId.toString(),
     })
     alert("Sumitted Successfully !")
   })
