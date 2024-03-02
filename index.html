@@ -162,7 +162,7 @@ button[type="submit"]:hover {
   document.getElementById("myForm").addEventListener('submit', function(e){
   e.preventDefault();
   let isValid = true;
-  const requiredFields = ["name", "phone", "email", "location", "pincode", "animalName", "severity", "file"];
+  const requiredFields = ["name", "phone", "email", "location", "pincode", "animalName", "severity"];
   requiredFields.forEach(field => {
     if (!document.getElementById(field).value) {
       isValid = false;
